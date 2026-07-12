@@ -272,6 +272,12 @@ endLng:151.2093
 // Create Globe
 
 const globe = Globe()(globeElement)
+   
+globe.showAtmosphere(true);
+
+globe.atmosphereColor("#06B6D4");
+
+globe.atmosphereAltitude(0.25);
 
 .globeImageUrl(
 "https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
@@ -291,11 +297,11 @@ const globe = Globe()(globeElement)
 
 .pointLng("lng")
 
-.pointColor(()=>"#06B6D4")
+.pointAltitude(0.15)
 
-.pointAltitude(0.12)
+.pointRadius(0.7)
 
-.pointRadius(0.45)
+.pointColor(()=>"#00E5FF")
 
 .pointLabel("name")
 
@@ -325,8 +331,9 @@ globe.height(globeElement.clientHeight);
 
 globe.controls().autoRotate=true;
 
-globe.controls().autoRotateSpeed=0.5;
+globe.controls().autoRotateSpeed=0.35;
 
+globe.controls().enableZoom=false;
 
 // Lighting
 
