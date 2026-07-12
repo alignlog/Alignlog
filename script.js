@@ -172,64 +172,179 @@ particlesJS("particles-js", {
 });
 
 }
-// ======================
-// 3D GLOBE
-// ======================
+// =====================================
+// ALIGNLOG PREMIUM 3D GLOBAL MAP
+// =====================================
 
-const globeContainer = document.getElementById("globeViz");
+const globeElement = document.getElementById("globeViz");
 
-if (globeContainer && typeof Globe === "function") {
+if (globeElement) {
 
-const cities = [
-  { lat:38.9072, lng:-77.0369, size:0.35, color:"#06B6D4" },   // USA
-  { lat:43.6532, lng:-79.3832, size:0.35, color:"#06B6D4" },   // Canada
-  { lat:51.5072, lng:-0.1276, size:0.35, color:"#06B6D4" },    // UK
-  { lat:52.5200, lng:13.4050, size:0.35, color:"#06B6D4" },    // Germany
-  { lat:1.3521, lng:103.8198, size:0.35, color:"#06B6D4" },    // Singapore
-  { lat:-33.8688, lng:151.2093, size:0.35, color:"#06B6D4" },  // Australia
-  { lat:28.6139, lng:77.2090, size:0.35, color:"#06B6D4" }     // India
+const locations = [
+
+{
+name:"India",
+lat:28.6139,
+lng:77.2090
+},
+
+{
+name:"United States",
+lat:38.9072,
+lng:-77.0369
+},
+
+{
+name:"United Kingdom",
+lat:51.5072,
+lng:-0.1276
+},
+
+{
+name:"Germany",
+lat:52.5200,
+lng:13.4050
+},
+
+{
+name:"Singapore",
+lat:1.3521,
+lng:103.8198
+},
+
+{
+name:"Australia",
+lat:-33.8688,
+lng:151.2093
+},
+
+{
+name:"Canada",
+lat:43.6532,
+lng:-79.3832
+}
+
 ];
 
-const arcs = [
-  { startLat:28.6139, startLng:77.2090, endLat:38.9072, endLng:-77.0369 },
-  { startLat:28.6139, startLng:77.2090, endLat:51.5072, endLng:-0.1276 },
-  { startLat:28.6139, startLng:77.2090, endLat:52.5200, endLng:13.4050 },
-  { startLat:28.6139, startLng:77.2090, endLat:43.6532, endLng:-79.3832 },
-  { startLat:28.6139, startLng:77.2090, endLat:1.3521, endLng:103.8198 },
-  { startLat:28.6139, startLng:77.2090, endLat:-33.8688, endLng:151.2093 }
+
+// Flight routes
+
+const routes=[
+
+{
+startLat:28.6139,
+startLng:77.2090,
+endLat:38.9072,
+endLng:-77.0369
+},
+
+{
+startLat:28.6139,
+startLng:77.2090,
+endLat:51.5072,
+endLng:-0.1276
+},
+
+{
+startLat:28.6139,
+startLng:77.2090,
+endLat:52.5200,
+endLng:13.4050
+},
+
+{
+startLat:28.6139,
+startLng:77.2090,
+endLat:1.3521,
+endLng:103.8198
+},
+
+{
+startLat:28.6139,
+startLng:77.2090,
+endLat:-33.8688,
+endLng:151.2093
+}
+
 ];
 
-const globe = Globe()(globeContainer)
 
-.globeImageUrl("https://unpkg.com/three-globe/example/img/earth-dark.jpg")
+// Create Globe
 
-.bumpImageUrl("https://unpkg.com/three-globe/example/img/earth-topology.png")
-   
-.backgroundColor("rgba(0,0,0,0)")
+const globe = Globe()(globeElement)
 
-.pointsData(cities)
+.globeImageUrl(
+"https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
+)
 
-.pointAltitude("size")
+.bumpImageUrl(
+"https://unpkg.com/three-globe/example/img/earth-topology.png"
+)
 
-.pointRadius(0.35)
+.backgroundColor(
+"rgba(0,0,0,0)"
+)
 
-.pointColor("color")
+.pointsData(locations)
 
-.arcsData(arcs)
+.pointLat("lat")
 
-.arcColor(() => "#06B6D4")
+.pointLng("lng")
+
+.pointColor(()=>"#06B6D4")
+
+.pointAltitude(0.12)
+
+.pointRadius(0.45)
+
+.pointLabel("name")
+
+.arcsData(routes)
+
+.arcColor(()=>"#06B6D4")
 
 .arcAltitude(0.25)
 
-.arcStroke(0.8)
+.arcStroke(1)
 
-.arcDashLength(0.4)
+.arcDashLength(0.5)
 
-.arcDashGap(2)
+.arcDashGap(3)
 
-.arcDashAnimateTime(3000);
+.arcDashAnimateTime(2500);
 
-globe.controls().autoRotate = true;
-globe.controls().autoRotateSpeed = 0.6;
+
+// Globe size
+
+globe.width(globeElement.clientWidth);
+
+globe.height(globeElement.clientHeight);
+
+
+// Rotation
+
+globe.controls().autoRotate=true;
+
+globe.controls().autoRotateSpeed=0.5;
+
+
+// Lighting
+
+const scene = globe.scene();
+
+scene.add(
+new THREE.AmbientLight(0xffffff,1.8)
+);
+
+
+// Responsive
+
+window.addEventListener("resize",()=>{
+
+globe.width(globeElement.clientWidth);
+
+globe.height(globeElement.clientHeight);
+
+});
 
 }
