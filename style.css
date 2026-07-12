@@ -1003,3 +1003,31 @@ flex-direction:column;
 }
 
 }
+.contact-card form{
+display:flex;
+flex-direction:column;
+gap:15px;
+margin-top:30px;
+}
+
+.contact-card input,
+.contact-card textarea{
+padding:16px;
+border-radius:12px;
+border:1px solid rgba(255,255,255,.15);
+background:rgba(255,255,255,.05);
+color:#fff;
+font-size:16px;
+width:100%;
+box-sizing:border-box;
+}
+
+.contact-card textarea{
+resize:vertical;
+min-height:140px;
+}
+
+.contact-card button{
+margin-top:10px;
+cursor:pointer;
+}
