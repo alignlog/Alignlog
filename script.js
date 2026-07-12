@@ -112,23 +112,6 @@ document.body.appendChild(glow);
 
 glow.style.left=e.clientX+"px";
 glow.style.top=e.clientY+"px";
-
-});
-
-
-// Fake Form Submission
-
-const form=document.querySelector("form");
-
-form.addEventListener("submit",(e)=>{
-
-e.preventDefault();
-
-alert("Thank you for your interest in AlignLog.com.\n\nWe will contact you shortly regarding your offer.");
-
-});
-
-
 // Button Hover Animation
 
 document.querySelectorAll(".btn").forEach(btn=>{
