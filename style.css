@@ -1088,3 +1088,18 @@ text-align:center;
 }
 
 }
+.hero-illustration{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+.hero-illustration img{
+    width:100%;
+    max-width:700px;
+    height:auto;
+    display:block;
+    object-fit:contain;
+}
