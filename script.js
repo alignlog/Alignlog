@@ -270,3 +270,34 @@ clearInterval(interval);
 }
 
 },30);
+const map = L.map('world-map').setView([25, 15], 2);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+    attribution:'© OpenStreetMap contributors'
+}).addTo(map);
+
+const buyers = [
+
+["United States",37.0902,-95.7129],
+
+["Canada",56.1304,-106.3468],
+
+["United Kingdom",55.3781,-3.4360],
+
+["Germany",51.1657,10.4515],
+
+["Singapore",1.3521,103.8198],
+
+["Australia",-25.2744,133.7751],
+
+["India",20.5937,78.9629]
+
+];
+
+buyers.forEach(country=>{
+
+L.marker([country[1],country[2]])
+.addTo(map)
+.bindPopup("<b>"+country[0]+"</b><br>Potential Buyer Market");
+
+});
