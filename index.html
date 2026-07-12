@@ -19,6 +19,8 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
 <link rel="stylesheet" href="style.css">
   
 <!-- Google Analytics -->
@@ -272,6 +274,25 @@ AlignLog.com is versatile enough to support businesses across multiple industrie
 </div>
 
 </section>
+<section class="section dark" id="global">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Global Buyer Markets</h2>
+
+<p>
+AlignLog.com is positioned for businesses and investors worldwide. Our primary target markets are highlighted below.
+</p>
+
+</div>
+
+<div id="world-map"></div>
+
+</div>
+
+</section>
+  
   <!-- INDUSTRY ECOSYSTEM -->
 
 <section class="section">
@@ -614,9 +635,10 @@ move:{enable:true,speed:1}
 }
 
 });
-
+  
 </script>
-
+  
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 <script src="script.js"></script>
 
