@@ -1124,3 +1124,29 @@ text-align:center;
         margin-top:40px;
     }
 }
+.hero-image{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+}
+
+.hero-image img{
+    width:100%;
+    max-width:520px;
+    height:auto;
+    object-fit:contain;
+    display:block;
+    margin:0 auto;
+    animation:float 6s ease-in-out infinite;
+    filter:drop-shadow(0 25px 45px rgba(0,0,0,.35));
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform:translateY(-12px);
+    }
+}
