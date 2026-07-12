@@ -249,3 +249,24 @@ footerText.innerHTML=`© ${new Date().getFullYear()} AlignLog.com • Premium Do
 }
 
 console.log("AlignLog Premium Landing Page Loaded Successfully");
+const counter=document.getElementById("counter");
+
+let value=0;
+
+const target=250000;
+
+const interval=setInterval(()=>{
+
+value+=5000;
+
+counter.innerHTML="$"+value.toLocaleString();
+
+if(value>=target){
+
+counter.innerHTML="$250,000+";
+
+clearInterval(interval);
+
+}
+
+},30);
