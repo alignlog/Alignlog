@@ -201,10 +201,10 @@ const arcs = [
 
 const globe = Globe()(globeContainer)
 
-.globeImageUrl("//unpkg.com/three-globe/example/img/earth-dark.jpg")
+.globeImageUrl("https://unpkg.com/three-globe/example/img/earth-dark.jpg")
 
-.bumpImageUrl("//unpkg.com/three-globe/example/img/earth-topology.png")
-
+.bumpImageUrl("https://unpkg.com/three-globe/example/img/earth-topology.png")
+   
 .backgroundColor("rgba(0,0,0,0)")
 
 .pointsData(cities)
