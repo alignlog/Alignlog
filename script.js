@@ -267,7 +267,6 @@ endLng:151.2093
 }
 
 ];
-
 // Create Globe
 
 const globe = Globe()(globeElement)
@@ -280,9 +279,13 @@ const globe = Globe()(globeElement)
 "https://unpkg.com/three-globe/example/img/earth-topology.png"
 )
 
-.backgroundColor(
-"rgba(0,0,0,0)"
-)
+.backgroundColor("rgba(0,0,0,0)")
+
+.showAtmosphere(true)
+
+.atmosphereColor("#06B6D4")
+
+.atmosphereAltitude(0.25)
 
 .pointsData(locations)
 
@@ -311,12 +314,3 @@ const globe = Globe()(globeElement)
 .arcDashGap(3)
 
 .arcDashAnimateTime(2500);
-
-
-// Atmosphere
-
-globe.showAtmosphere(true);
-
-globe.atmosphereColor("#06B6D4");
-
-globe.atmosphereAltitude(0.25);
