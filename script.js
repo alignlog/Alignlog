@@ -314,5 +314,4 @@ const globe = Globe()(globeElement)
 .arcDashGap(3)
 
 .arcDashAnimateTime(2500);
-   
 }
