@@ -268,16 +268,9 @@ endLng:151.2093
 
 ];
 
-
 // Create Globe
 
 const globe = Globe()(globeElement)
-   
-globe.showAtmosphere(true);
-
-globe.atmosphereColor("#06B6D4");
-
-globe.atmosphereAltitude(0.25);
 
 .globeImageUrl(
 "https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
@@ -320,38 +313,10 @@ globe.atmosphereAltitude(0.25);
 .arcDashAnimateTime(2500);
 
 
-// Globe size
+// Atmosphere
 
-globe.width(globeElement.clientWidth);
+globe.showAtmosphere(true);
 
-globe.height(globeElement.clientHeight);
+globe.atmosphereColor("#06B6D4");
 
-
-// Rotation
-
-globe.controls().autoRotate=true;
-
-globe.controls().autoRotateSpeed=0.35;
-
-globe.controls().enableZoom=false;
-
-// Lighting
-
-const scene = globe.scene();
-
-scene.add(
-new THREE.AmbientLight(0xffffff,1.8)
-);
-
-
-// Responsive
-
-window.addEventListener("resize",()=>{
-
-globe.width(globeElement.clientWidth);
-
-globe.height(globeElement.clientHeight);
-
-});
-
-}
+globe.atmosphereAltitude(0.25);
