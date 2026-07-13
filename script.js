@@ -47,7 +47,7 @@ window.addEventListener("load", () => {
 
     animateCounter("counter2", 8);
 
-    animateCounter("counter3", 1200, "$");
+    animateCounter("counter3", 3200, "$");
 
 });
 
